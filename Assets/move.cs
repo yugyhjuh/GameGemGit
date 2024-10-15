@@ -4,46 +4,36 @@ using UnityEngine;
 
 public class move : MonoBehaviour
 { 
-    private CharacterController controller;
-    private Vector3 playerVelocity;
-    private float playerSpeed = 5.0f;
-    private float jumpHeight = 1.0f;
-    private float gravityValue = -9.81f;
+    private Rigidbody2D rb;
+    private Vector2 playerVelocity;
+    public float playerSpeed = 5.0f;
+    public float jumpHeight = 5.0f;  // Jump force (use higher value for 2D jumping)
+    public float gravityValue = -9.81f;  // Default gravity for 2D physics
 
     private bool isGrounded;
     public Transform groundCheck;  // Reference to the empty GameObject below player's feet
-    public float groundCheckRadius = 5.0f;  // Size of the ground check circle
-    public LayerMask groundLayer;
+    public float groundCheckRadius = 0.2f;  // Size of the ground check circle
+    public LayerMask groundLayer;  // Ground layer for detection
 
-    
-
-    // Start is called before the first frame update
     void Start()
     {
-        controller = gameObject.AddComponent<CharacterController>();
-        
+        rb = gameObject.GetComponent<Rigidbody2D>();  // Add Rigidbody2D component
+        rb.gravityScale = 1;  // Set gravity scale for 2D
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Check if player is grounded by using Physics2D.OverlapCircle
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-        controller.Move(move * Time.deltaTime * playerSpeed);
-        if (isGrounded && playerVelocity.y < 0)
-        {
-            playerVelocity.y = 0f;
-        }
-        
+        // Horizontal movement
+        float moveInput = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(moveInput * playerSpeed, rb.velocity.y);  // Set horizontal velocity
+
+        // Jumping logic
         if (Input.GetAxis("Vertical") > 0 && isGrounded)
         {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -5.0f * gravityValue);
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Sqrt(jumpHeight * -2.0f * gravityValue));
         }
-
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
-
-
     }
 }
