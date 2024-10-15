@@ -15,6 +15,8 @@ public class move : MonoBehaviour
     public float groundCheckRadius = 0.2f;  // Size of the ground check circle
     public LayerMask groundLayer;  // Ground layer for detection
 
+    private GameObject currentTeleporter;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();  // Add Rigidbody2D component
@@ -34,6 +36,32 @@ public class move : MonoBehaviour
         if (Input.GetAxis("Vertical") > 0 && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Sqrt(jumpHeight * -2.0f * gravityValue));
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (currentTeleporter != null)
+            {
+                transform.position = currentTeleporter.GetComponent<Teleporter>().GetDestination().position;
+
+            }
+        }
+    }
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Teleporter"))
+        {
+            currentTeleporter = collider.gameObject;
+        }
+    }
+    public void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Teleporter"))
+        {
+            if (collider.gameObject == currentTeleporter)
+            {
+                currentTeleporter = null;
+            }
         }
     }
 }
