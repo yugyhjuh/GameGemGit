@@ -14,6 +14,16 @@ public class NPC : MonoBehaviour
     public float wordSpeed;
     public bool playerIsClose;
 
+    public Material defaultMaterial; // Assign the normal material here
+    public Material glowMaterial;    // Assign the glow material here
+
+    private SpriteRenderer spriteRenderer;
+
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -33,6 +43,16 @@ public class NPC : MonoBehaviour
         if (dialogueText.text == dialogue[index])
         {
             continueButton.SetActive(true);
+        }
+
+        // Apply glow effect when player is close
+        if (playerIsClose)
+        {
+            spriteRenderer.material = glowMaterial; // Switch to glow material
+        }
+        else
+        {
+            spriteRenderer.material = defaultMaterial; // Revert to normal material
         }
     }
 

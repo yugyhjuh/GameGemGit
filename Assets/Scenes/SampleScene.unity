@@ -584,7 +584,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: texitiengijewknherjt
+  m_Text: yo
 --- !u!222 &218590504
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -643,8 +643,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScaleFactor: 2.5
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1600,6 +1600,8 @@ MonoBehaviour:
   continueButton: {fileID: 1793348664}
   wordSpeed: 0.06
   playerIsClose: 0
+  defaultMaterial: {fileID: 2100000, guid: 122b889a6ad703149b958a269b525b5e, type: 2}
+  glowMaterial: {fileID: 2100000, guid: 7d397a6b479d82146b90d298f4e14445, type: 2}
 --- !u!61 &894844302
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2102,7 +2104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1302193873
 RectTransform:
   m_ObjectHideFlags: 0
