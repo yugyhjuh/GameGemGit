@@ -7,10 +7,6 @@ public class MainMenu : MonoBehaviour
 {
         public void PlayGame()
     {
-<<<<<<< Updated upstream
         SceneManager.LoadSceneAsync(1);
-=======
-        SceneManager.LoadSceneAsync(3);
->>>>>>> Stashed changes
     }
 }
