@@ -18,7 +18,7 @@ public class ParachuteScene : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && playerIsCloser)
         {
-            SceneManager.LoadSceneAsync(3);
+            SceneManager.LoadSceneAsync(5);
         }
     }
     public void OnTriggerEnter2D(Collider2D other)
