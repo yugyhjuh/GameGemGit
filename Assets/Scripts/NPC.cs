@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NPC : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class NPC : MonoBehaviour
 
     private Animator animator;
     public float rotationSpeed = 6.0f * 360f;
-    private bool runSpin = false;
+    public bool runSpin = false;
     private SpriteRenderer spriteRenderer;
 
     void Start()
@@ -28,26 +29,35 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsClose && runSpin == false)
+        if (playerIsClose)
         {
-            if (dialoguePanel.activeInHierarchy)
+            if (Input.GetKeyDown(KeyCode.E) && runSpin == false)
             {
-                zeroText();
+                if (dialoguePanel.activeInHierarchy)
+                {
+                    zeroText();
+                }
+                else
+                {
+                    dialoguePanel.SetActive(true);
+                    StartCoroutine(Typing());
+                }
             }
-            else
+            else if (Input.GetKeyDown(KeyCode.E) && runSpin == true)
             {
-                dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
+                //runSpin = false;
+                SceneManager.LoadSceneAsync(6);
             }
+            
         }
 
         if (dialogueText.text == dialogue[index])
         {
-            if (dialogueText.text == dialogue[2])
+            if (dialogueText.text == dialogue[5])
             {
                 continueButton.GetComponentInChildren<Text>().text = "Scissors!";
             }
-            else if (dialogueText.text == dialogue[3])
+            else if (dialogueText.text == dialogue[6])
             {
                 continueButton.GetComponentInChildren<Text>().text = "...";
                 runSpin = true;

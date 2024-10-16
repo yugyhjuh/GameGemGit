@@ -781,7 +781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3369,7 +3369,7 @@ Transform:
   m_GameObject: {fileID: 1130261292}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4300005, y: 1.5999999, z: 0}
+  m_LocalPosition: {x: 2.4300005, y: 0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4874,7 +4874,7 @@ Transform:
   m_GameObject: {fileID: 1748779825}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.865, y: 1.5, z: 0}
+  m_LocalPosition: {x: -4.14, y: 1.5, z: 0}
   m_LocalScale: {x: 5.759004, y: 10.726145, z: 5.759004}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5421,7 +5421,7 @@ Transform:
   m_GameObject: {fileID: 1835964610}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.37, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5561,7 +5561,7 @@ Transform:
   m_GameObject: {fileID: 1887933449}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.445, y: 1.1, z: 0}
+  m_LocalPosition: {x: -29.39, y: 1.1, z: 0}
   m_LocalScale: {x: 5.759004, y: 10.726145, z: 5.759004}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6254,7 +6254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.6745098, g: 0.7411765, b: 0.5411765, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6365,7 +6365,7 @@ Transform:
   m_GameObject: {fileID: 2042698573}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.611358, y: -0.17, z: 0}
+  m_LocalPosition: {x: -27, y: -0.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6988,7 +6988,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 236047931323692366, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.15
+      value: -23.829998
       objectReference: {fileID: 0}
     - target: {fileID: 236047931323692366, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7042,6 +7042,38 @@ PrefabInstance:
       propertyPath: continueButton
       value: 
       objectReference: {fileID: 1793348664}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: Yo it's you again
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: I see you got the parts to the rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.data[2]
+      value: I have something you will need
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.data[3]
+      value: Play with me and I'll give it to you !!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.data[4]
+      value: No tricks this time
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.data[5]
+      value: Rock.. Paper...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.data[6]
+      value: ROCK!!! HAHAHA GULLIBLE LOSER
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
