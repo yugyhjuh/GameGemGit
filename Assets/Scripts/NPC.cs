@@ -42,6 +42,14 @@ public class NPC : MonoBehaviour
 
         if (dialogueText.text == dialogue[index])
         {
+            if (dialogueText.text == dialogue[2])
+            {
+                continueButton.GetComponentInChildren<Text>().text = "Scissors!";
+            }
+            else if (dialogueText.text == dialogue[3])
+            {
+                continueButton.GetComponentInChildren<Text>().text = "Fuck you";
+            }
             continueButton.SetActive(true);
         }
 
