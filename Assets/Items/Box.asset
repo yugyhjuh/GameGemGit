@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1375d5be502164003ba1078fcd04b754, type: 3}
   m_Name: Box
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: RAAAAAAAA
   description: 
   icon: {fileID: 0}
