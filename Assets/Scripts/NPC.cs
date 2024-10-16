@@ -14,14 +14,14 @@ public class NPC : MonoBehaviour
     public float wordSpeed;
     public bool playerIsClose;
 
-    public Material defaultMaterial; // Assign the normal material here
-    public Material glowMaterial;    // Assign the glow material here
+    private Animator animator;
 
     private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -56,11 +56,11 @@ public class NPC : MonoBehaviour
         // Apply glow effect when player is close
         if (playerIsClose)
         {
-            spriteRenderer.material = glowMaterial; // Switch to glow material
+            animator.enabled = true;
         }
         else
         {
-            spriteRenderer.material = defaultMaterial; // Revert to normal material
+            ResetAnimation();
         }
     }
 
@@ -110,5 +110,16 @@ public class NPC : MonoBehaviour
             playerIsClose = false;
             zeroText();
         }
+    }
+    private void ResetAnimation()
+    {
+        // Disable the animator
+        animator.enabled = false;
+
+        // Reset the animation to the initial frame (time 0 of the current state)
+        animator.Play(animator.GetCurrentAnimatorStateInfo(0).fullPathHash, -1, 0f);
+
+        // Force the animator to update, so the reset takes effect immediately
+        animator.Update(0f);
     }
 }
