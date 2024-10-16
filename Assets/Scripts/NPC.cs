@@ -14,20 +14,21 @@ public class NPC : MonoBehaviour
     public float wordSpeed;
     public bool playerIsClose;
 
-    public Material defaultMaterial; // Assign the normal material here
-    public Material glowMaterial;    // Assign the glow material here
-
+    private Animator animator;
+    public float rotationSpeed = 6.0f * 360f;
+    private bool runSpin = false;
     private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
+        if (Input.GetKeyDown(KeyCode.E) && playerIsClose && runSpin == false)
         {
             if (dialoguePanel.activeInHierarchy)
             {
@@ -42,17 +43,31 @@ public class NPC : MonoBehaviour
 
         if (dialogueText.text == dialogue[index])
         {
+            if (dialogueText.text == dialogue[2])
+            {
+                continueButton.GetComponentInChildren<Text>().text = "Scissors!";
+            }
+            else if (dialogueText.text == dialogue[3])
+            {
+                continueButton.GetComponentInChildren<Text>().text = "...";
+                runSpin = true;
+            }
             continueButton.SetActive(true);
+        }
+
+        if (runSpin == true)
+        {
+            transform.Rotate(Vector3.forward * -rotationSpeed * Time.deltaTime);
         }
 
         // Apply glow effect when player is close
         if (playerIsClose)
         {
-            spriteRenderer.material = glowMaterial; // Switch to glow material
+            animator.enabled = true;
         }
         else
         {
-            spriteRenderer.material = defaultMaterial; // Revert to normal material
+            ResetAnimation();
         }
     }
 
@@ -102,5 +117,16 @@ public class NPC : MonoBehaviour
             playerIsClose = false;
             zeroText();
         }
+    }
+    private void ResetAnimation()
+    {
+        // Disable the animator
+        animator.enabled = false;
+
+        // Reset the animation to the initial frame (time 0 of the current state)
+        animator.Play(animator.GetCurrentAnimatorStateInfo(0).fullPathHash, -1, 0f);
+
+        // Force the animator to update, so the reset takes effect immediately
+        animator.Update(0f);
     }
 }
