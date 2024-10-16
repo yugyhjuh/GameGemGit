@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Endminigame : MonoBehaviour
+public class TeleportToMini : MonoBehaviour
 {
+
     private bool miniplayerIsClose = false;
 
     void Update()
     {
         if(miniplayerIsClose == true)
         {
+            SceneManager.LoadSceneAsync(3);
         }
     }
     public void OnTriggerEnter2D(Collider2D other)
@@ -18,7 +20,6 @@ public class Endminigame : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             miniplayerIsClose = true;
-            SceneManager.LoadSceneAsync(4);
         }
     }
 }

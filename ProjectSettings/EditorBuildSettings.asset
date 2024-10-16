@@ -18,8 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/tiles park or.unity
     guid: 89f212ba4b7811c4daa3bb91ff434da5
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: add09081ea939bf42b8e5f55d05e07ad
+    path: Assets/Scenes/newmain.unity
+    guid: c318692830792a445905f5a381ac0170
   - enabled: 1
     path: Assets/Scenes/CreditScene.unity
     guid: 91d9759f42f80074dbfd069fe0409496
