@@ -41,10 +41,10 @@ public class Inventory : MonoBehaviour
     // Displays inventory contents in the console
     public void ShowInventory()
     {
-        Debug.Log("Inventory: ");
         foreach (Item item in items)
         {
-            Debug.Log(item.itemName);
+
+            Debug.Log("Inventory:" + item.itemName);
         }
     }
 }

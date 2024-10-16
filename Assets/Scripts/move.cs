@@ -67,9 +67,6 @@ public class move : MonoBehaviour
                 jumpCharge = false;
             }
         }
-        Debug.Log(releaseJump);
-        Debug.Log(jumpCharge);
-        Debug.Log(canDoubleJump);
 
         // Teleporter
         if (Input.GetKeyDown(KeyCode.F))
