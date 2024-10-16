@@ -15,7 +15,8 @@ public class NPC : MonoBehaviour
     public bool playerIsClose;
 
     private Animator animator;
-
+    public float rotationSpeed = 6.0f * 360f;
+    private bool runSpin = false;
     private SpriteRenderer spriteRenderer;
 
     void Start()
@@ -27,7 +28,7 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
+        if (Input.GetKeyDown(KeyCode.E) && playerIsClose && runSpin == false)
         {
             if (dialoguePanel.activeInHierarchy)
             {
@@ -48,9 +49,15 @@ public class NPC : MonoBehaviour
             }
             else if (dialogueText.text == dialogue[3])
             {
-                continueButton.GetComponentInChildren<Text>().text = "Fuck you";
+                continueButton.GetComponentInChildren<Text>().text = "...";
+                runSpin = true;
             }
             continueButton.SetActive(true);
+        }
+
+        if (runSpin == true)
+        {
+            transform.Rotate(Vector3.forward * -rotationSpeed * Time.deltaTime);
         }
 
         // Apply glow effect when player is close
