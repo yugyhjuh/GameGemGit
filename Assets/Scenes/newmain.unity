@@ -1158,7 +1158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 0.98427665, b: 0.98427665, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2791,6 +2791,90 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6394772682875497506, guid: 56a9e3386fcee7440aed639f95a32803, type: 3}
   m_PrefabInstance: {fileID: 1738812260943144598}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &535384230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 535384231}
+  - component: {fileID: 535384232}
+  m_Layer: 6
+  m_Name: NPCminimap2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &535384231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535384230}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.17299843, y: -0.21699905, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1892639711}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &535384232
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535384230}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -5
+  m_Sprite: {fileID: -9095717837082945937, guid: ef225c4dbc9d0364282b7b9cea336278, type: 3}
+  m_Color: {r: 0, g: 1, b: 0.9066191, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &547778651
 GameObject:
   m_ObjectHideFlags: 0
@@ -5900,7 +5984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10745,7 +10829,8 @@ Transform:
   m_LocalPosition: {x: -11.093, y: 18.977, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 535384231}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1892639712
@@ -12127,7 +12212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12585,6 +12670,38 @@ PrefabInstance:
       propertyPath: continueButton
       value: 
       objectReference: {fileID: 1793348664}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: You look funny
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: You see a rat before?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.data[2]
+      value: I bet you haven't
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.data[3]
+      value: Play with me
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.data[4]
+      value: I'll go easy on you
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.data[5]
+      value: rock...paper...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370486865034118827, guid: f732bf36a9672534b95a873f2beb8d7e, type: 3}
+      propertyPath: dialogue.Array.data[6]
+      value: ROCK!!! HAHAHA LOSER
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
