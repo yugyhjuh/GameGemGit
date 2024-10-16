@@ -18,6 +18,7 @@ public class move : MonoBehaviour
     public bool canDoubleJump = false;
     private bool jumpCharge = false;
     private bool releaseJump = false;
+    private bool flipped = false;
 
     // Ground Checking
     private bool isGrounded;
@@ -43,6 +44,18 @@ public class move : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(20);
+        }
+        if (Input.GetKeyDown(KeyCode.A) && flipped == false)
+        {
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.flipX = !spriteRenderer.flipX;
+            flipped = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.D) && flipped == true)
+        {
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.flipX = !spriteRenderer.flipX;
+            flipped = false;
         }
 
 

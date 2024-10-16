@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Rocket Tip
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 3e627d4f82992964cb0df25602e38968, type: 3}
