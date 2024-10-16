@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class move : MonoBehaviour
-{ 
+{
+    public int maxHealth = 100;
+    public int currentHealth;
+    public HealthBar healthBar;
+
     private Rigidbody2D rb;
     private Vector2 playerVelocity;
     public float playerSpeed = 5.0f;
@@ -19,12 +23,20 @@ public class move : MonoBehaviour
 
     void Start()
     {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+
         rb = gameObject.GetComponent<Rigidbody2D>();  // Add Rigidbody2D component
         rb.gravityScale = 1;  // Set gravity scale for 2D
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(20);
+        }
+
         // Check if player is grounded by using Physics2D.OverlapCircle
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -47,6 +59,12 @@ public class move : MonoBehaviour
             }
         }
     }
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
+
     public void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Teleporter"))
