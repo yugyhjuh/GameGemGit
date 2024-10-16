@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class move : MonoBehaviour
 {
@@ -41,9 +42,13 @@ public class move : MonoBehaviour
     void Update()
     {
         // Health Bar
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    TakeDamage(20);
+        //}
+        if (currentHealth == 0)
         {
-            TakeDamage(20);
+            SceneManager.LoadSceneAsync(1);
         }
         if (Input.GetKeyDown(KeyCode.A) && flipped == false)
         {
@@ -102,6 +107,10 @@ public class move : MonoBehaviour
         if (collider.CompareTag("Teleporter"))
         {
             currentTeleporter = collider.gameObject;
+        }
+        if (collider.CompareTag("Rat"))
+        {
+            TakeDamage(20);
         }
     }
     public void OnTriggerExit2D(Collider2D collider)

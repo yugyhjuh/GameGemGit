@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Teleporter
   - Parallax
+  - Rat
   layers:
   - Default
   - TransparentFX
