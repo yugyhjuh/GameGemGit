@@ -15,6 +15,9 @@ public class move : MonoBehaviour
     public float playerSpeed = 5.0f;
     public float jumpHeight = 5.0f; 
     public float gravityValue = -9.81f;
+    public bool canDoubleJump = false;
+    private bool jumpCharge = false;
+    private bool releaseJump = false;
 
     // Ground Checking
     private bool isGrounded;
@@ -49,10 +52,24 @@ public class move : MonoBehaviour
 
         // Jumping logic
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        if (Input.GetAxis("Vertical") > 0 && isGrounded)
+        if (canDoubleJump) {
+            if (!isGrounded && Input.GetAxis("Vertical") == 0) {
+                releaseJump = true;
+            } else if (isGrounded) {
+                jumpCharge = true;
+            }
+        }
+        if ((Input.GetAxis("Vertical") > 0 && isGrounded) || (canDoubleJump && releaseJump && jumpCharge && Input.GetAxis("Vertical") > 0))
         {
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Sqrt(jumpHeight * -2.0f * gravityValue));
+            releaseJump = false;
+            if (!isGrounded) {
+                jumpCharge = false;
+            }
         }
+        Debug.Log(releaseJump);
+        Debug.Log(jumpCharge);
+        Debug.Log(canDoubleJump);
 
         // Teleporter
         if (Input.GetKeyDown(KeyCode.F))
